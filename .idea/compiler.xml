@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="grpc-demo-client" />
+        <module name="grpc-demo-server" />
+        <module name="proto" />
+      </profile>
+      <profile name="Annotation profile for grpc-demo-client" enabled="true">
+        <sourceOutputDir name="grpc-demo-client/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="grpc-demo-client/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="grpc-springboot-demo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="grpc-demo-client" target="1.8" />
+      <module name="grpc-demo-server" target="1.8" />
+      <module name="grpc-springboot-demo" target="1.8" />
+      <module name="proto" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="grpc-demo-client" options="-parameters" />
+      <module name="grpc-demo-server" options="-parameters" />
+      <module name="grpc-springboot-demo" options="-parameters" />
+    </option>
+  </component>
+</project>
