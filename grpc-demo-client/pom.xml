@@ -8,42 +8,37 @@
 		<version>2.3.12.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.customerservice.grpc</groupId>
-	<artifactId>spring-boot-grpc</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>grpc-demo-client</name>
-	<description>Demo project for gRPC with Spring Boot</description>
+<!--	<groupId>com.customerservice.grpc</groupId>-->
+	<artifactId>grpc-demo-client</artifactId>
+<!--	<version>0.0.1-SNAPSHOT</version>-->
+<!--	<name>grpc-demo-client</name>-->
+<!--	<description>Demo project for gRPC with Spring Boot</description>-->
 	<properties>
-		<java.version>1.8</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.example</groupId>
-			<artifactId>proto</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 
+	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
+			<groupId>org.grpc-springboot.demo</groupId>
+			<artifactId>proto</artifactId>
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
-
 		<dependency>
 			<groupId>net.devh</groupId>
-			<artifactId>grpc-spring-boot-starter</artifactId>
+			<artifactId>grpc-client-spring-boot-starter</artifactId>
 			<version>2.12.0.RELEASE</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -51,8 +46,15 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>

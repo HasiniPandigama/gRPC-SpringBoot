@@ -1,12 +1,14 @@
-package com.grpcexample.service;
+package com.grpcexample.grpcdemoclient.service;
 
 import com.customerservice.grpc.stubs.CustomerDetailsRequest;
 import com.customerservice.grpc.stubs.CustomerServiceGrpc;
 import com.google.protobuf.Descriptors;
 import net.devh.boot.grpc.client.inject.GrpcClient;
+import org.springframework.stereotype.Service;
 
 import java.util.Map;
 
+@Service
 public class CustomerClientService {
 
     @GrpcClient("customer-service")
