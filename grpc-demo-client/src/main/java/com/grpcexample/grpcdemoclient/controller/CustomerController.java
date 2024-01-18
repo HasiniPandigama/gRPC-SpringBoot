@@ -24,6 +24,12 @@ public class CustomerController {
         return customerClientService.getCustomerDetails(customerId);
     }
 
+    @PostMapping("/customer/customer-account-details")
+    public List<Map<Descriptors.FieldDescriptor, Object>> getCustomerAccountDetails(@RequestBody CustomerDetails customerDetails) throws InterruptedException {
+
+        return customerClientService.getCustomerAccountDetails(customerDetails);
+    }
+
     @PostMapping("/customer/customer-newest-account")
     public Map<String, Map<Descriptors.FieldDescriptor, Object>> getNewestAccount(@RequestBody List<CustomerAccountDetails> customerAccountDetailsList) throws InterruptedException {
 
@@ -34,12 +40,6 @@ public class CustomerController {
     public List<Map<Descriptors.FieldDescriptor, Object>> getAccountsOlderThanOneYear(@RequestBody List<CustomerAccountDetails> customerAccountDetailsList) throws InterruptedException {
 
         return customerClientService.getAccountsOlderThanOneYear(customerAccountDetailsList);
-    }
-
-    @PostMapping("/customer/customer-account-details")
-    public List<Map<Descriptors.FieldDescriptor, Object>> getCustomerAccountDetails(@RequestBody CustomerDetails customerDetails) throws InterruptedException {
-
-        return customerClientService.getCustomerAccountDetails(customerDetails);
     }
 
 
