@@ -29,7 +29,7 @@ public class TempData {
         };
     }
 
-    public List<CustomerAccountDetails> getCustomerAccountDetailsFromTempDb() {
+    public static List<CustomerAccountDetails> getCustomerAccountDetailsFromTempDb() {
         return new ArrayList<CustomerAccountDetails>() {
             {
                 add(CustomerAccountDetails.newBuilder().setAccountName("Amal").setCustomerId("123564").setBillingAccountNumber(432123564)
